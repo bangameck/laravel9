@@ -77,6 +77,8 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
+        $this->authorize('post-access');
+
         return view('dash.posts.show', [
             'title' => 'Detail Post',
             'post' => $post,
@@ -146,6 +148,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
 
         return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');

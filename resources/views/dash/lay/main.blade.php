@@ -13,6 +13,7 @@
     <link href="/assets/css/dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/assets/css/trix.css">
     <script type="text/javascript" src="/assets/js/trix.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         trix-toolbar [data-trix-button-group="file-tools"] {
             display: none;
